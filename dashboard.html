@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Student Dashboard | PEC{% endblock %}
+{% block content %}
+<section class="dashboard-head">
+  <div><p class="eyebrow">STUDENT DASHBOARD</p><h1>Good to see you, {{ current_user }}.</h1><p>Select an examination below to begin your assessment.</p></div>
+  <div class="profile-chip"><span>{{ current_user[0]|upper }}</span><div><b>{{ current_user }}</b><small>Student</small></div></div>
+</section>
+<section class="dashboard-grid">
+  <div>
+    <div class="section-heading compact"><h2>Available Exams</h2><span class="muted">{{ exams|length }} assessments</span></div>
+    {% for exam in exams %}
+    <article class="dashboard-exam">
+      <div class="exam-icon">{{ "%02d"|format(loop.index) }}</div>
+      <div class="dashboard-exam-info">
+        <span class="course-code">{{ exam.code }}</span><h3>{{ exam.name }}</h3>
+        <p>{{ exam.description }}</p>
+        <div class="exam-meta"><span>⏱ {{ exam.duration }} minutes</span><span>◉ {{ exam.questions_data|length }} questions</span></div>
+      </div>
+      <a class="btn btn-dark small-btn" href="{{ url_for('exam', exam_id=exam.id) }}">Start Exam →</a>
+    </article>
+    {% endfor %}
+  </div>
+  <aside class="side-panel">
+    <p class="eyebrow">QUICK GUIDE</p><h3>Before you begin</h3>
+    <ul class="guide-list">
+      <li><span>01</span> Keep a stable internet connection.</li>
+      <li><span>02</span> The timer starts when the exam opens.</li>
+      <li><span>03</span> Select one answer for each question.</li>
+      <li><span>04</span> Submit before the timer reaches zero.</li>
+    </ul>
+    <div class="tip-box"><b>Tip</b><p>Read every question carefully before selecting your answer.</p></div>
+  </aside>
+</section>
+{% endblock %}

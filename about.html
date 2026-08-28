@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}About | PEC Examination Portal{% endblock %}
+{% block content %}
+<section class="page-banner"><p class="eyebrow">ABOUT THE PROJECT</p><h1>Digital Examination,<br><span>built for college.</span></h1><p>A lightweight cloud-ready examination portal created using Flask and frontend web technologies.</p></section>
+<section class="section about-grid">
+  <div><p class="eyebrow">PROJECT ARCHITECTURE</p><h2>How the system works</h2></div>
+  <div class="architecture">
+    <div><span>01</span><b>Student Browser</b><small>HTML · CSS · JavaScript</small></div>
+    <div class="arrow">↓</div>
+    <div><span>02</span><b>Flask Web Server</b><small>Routes · Sessions · Scoring</small></div>
+    <div class="arrow">↓</div>
+    <div><span>03</span><b>Cloud Deployment</b><small>Render · Gunicorn</small></div>
+  </div>
+</section>
+<section class="feature-section">
+  <div class="feature"><b>01</b><h3>Student Portal</h3><p>Students can log in, select an examination and complete timed MCQ assessments.</p></div>
+  <div class="feature"><b>02</b><h3>Automatic Results</h3><p>The Flask backend evaluates submitted answers and calculates the score and percentage.</p></div>
+  <div class="feature"><b>03</b><h3>Cloud Ready</h3><p>The project includes a production server configuration for deployment to Render.</p></div>
+</section>
+{% endblock %}

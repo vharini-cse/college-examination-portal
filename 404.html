@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block title %}Page Not Found | PEC{% endblock %}
+{% block content %}
+<section class="result-page"><div class="result-card"><p class="eyebrow">404 · PAGE NOT FOUND</p><h1>We couldn't find that page.</h1><p>The page may have moved or the URL may be incorrect.</p><div class="result-actions"><a class="btn btn-dark" href="{{ url_for('home') }}">Return Home →</a></div></div></section>
+{% endblock %}

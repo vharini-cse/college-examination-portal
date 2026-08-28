@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Login | PEC Examination Portal{% endblock %}
+{% block content %}
+<section class="auth-page">
+  <div class="auth-card">
+    <div class="auth-heading">
+      <span class="mini-mark">PEC</span>
+      <p class="eyebrow">EXAMINATION PORTAL</p>
+      <h1>Welcome back.</h1>
+      <p>Sign in to continue to your academic dashboard.</p>
+    </div>
+    <form method="POST" class="form">
+      <label>Username<input type="text" name="username" placeholder="Enter your username" required></label>
+      <label>Password<input type="password" name="password" placeholder="Enter your password" required></label>
+      <label>Login as
+        <select name="role">
+          <option value="student">Student</option>
+          <option value="admin">Admin / Faculty</option>
+        </select>
+      </label>
+      <button class="btn btn-dark" type="submit">Sign In <span>→</span></button>
+    </form>
+    <p class="demo-note">Demo mode: any username and password will work.</p>
+  </div>
+</section>
+{% endblock %}

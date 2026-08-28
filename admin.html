@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard | PEC{% endblock %}
+{% block content %}
+<section class="dashboard-head">
+  <div><p class="eyebrow">ADMINISTRATION</p><h1>Examination Control Center.</h1><p>Manage the current academic assessments.</p></div>
+  <div class="admin-badge">ADMIN / FACULTY</div>
+</section>
+<section class="admin-grid">
+  <div class="admin-stat"><span>ACTIVE EXAMS</span><strong>{{ exams|length }}</strong><small>Currently published</small></div>
+  <div class="admin-stat"><span>QUESTION FORMAT</span><strong>MCQ</strong><small>Automatic evaluation</small></div>
+  <div class="admin-stat"><span>STORAGE</span><strong>DEMO</strong><small>No database connected</small></div>
+</section>
+<section class="section admin-section">
+  <div class="section-heading compact"><h2>Published Examinations</h2><span class="muted">Demo administration view</span></div>
+  <div class="table-card">
+  {% for exam in exams %}
+    <div class="table-row"><div><span class="course-code">{{ exam.code }}</span><b>{{ exam.name }}</b></div><span>{{ exam.questions_data|length }} Questions</span><span>{{ exam.duration }} min</span><span class="status-pill">Published</span></div>
+  {% endfor %}
+  </div>
+</section>
+{% endblock %}

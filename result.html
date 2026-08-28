@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Result | PEC Examination Portal{% endblock %}
+{% block content %}
+<section class="result-page">
+  <div class="result-card">
+    <p class="eyebrow">EXAMINATION COMPLETED</p>
+    <div class="result-circle"><strong>{{ result.percentage }}%</strong><span>Score</span></div>
+    <h1>Well done, {{ result.user }}!</h1>
+    <p>Your {{ result.exam }} assessment has been submitted successfully.</p>
+    <div class="result-stats">
+      <div><strong>{{ result.score }}</strong><span>Correct</span></div>
+      <div><strong>{{ result.total }}</strong><span>Total</span></div>
+      <div><strong>{{ result.attempted }}</strong><span>Attempted</span></div>
+    </div>
+    <div class="result-actions"><a class="btn btn-dark" href="{{ url_for('dashboard') }}">Back to Dashboard →</a><a class="outline-btn" href="{{ url_for('home') }}">Home</a></div>
+  </div>
+</section>
+{% endblock %}
